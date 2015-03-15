@@ -10,6 +10,11 @@ MainWindow::MainWindow()
 
 }
 
+MainWindow::~MainWindow()
+{
+    delete renderArea;
+}
+
 QSize MainWindow::sizeHint() const
 {
     return QSize(600, 400);

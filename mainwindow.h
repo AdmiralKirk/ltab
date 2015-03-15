@@ -11,6 +11,7 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow();
+    ~MainWindow();
     QSize sizeHint() const;
 
 private:
