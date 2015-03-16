@@ -23,3 +23,5 @@ void RenderArea::drawTabStaff(QPainter &painter, int topPixel)
         painter.drawLine(0, currentY, width(), currentY);
     }
 }
+
+//void RenderArea::drawFrenchTabNote(QPainter &painter, )

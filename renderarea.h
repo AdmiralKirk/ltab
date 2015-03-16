@@ -18,7 +18,6 @@ private:
     int pixelsBetweenStaffLines;
 
     void drawTabStaff(QPainter &painter, int topPixel);
-
 };
 
 #endif // RENDERAREA_H
