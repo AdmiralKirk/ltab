@@ -5,18 +5,15 @@
 
 MainWindow::MainWindow()
 {
-    renderArea = new RenderArea();
+    renderArea = new RenderArea(this);
 
     setWindowTitle("ltab");
     setCentralWidget(renderArea);
+
+    resize(QSize(600, 400));
 }
 
 MainWindow::~MainWindow()
 {
     delete renderArea;
-}
-
-QSize MainWindow::sizeHint() const
-{
-    return QSize(600, 400);
 }

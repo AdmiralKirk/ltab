@@ -12,7 +12,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow();
     ~MainWindow();
-    QSize sizeHint() const;
+//    QSize sizeHint() const;
 
 private:
     RenderArea *renderArea;
