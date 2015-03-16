@@ -18,6 +18,7 @@ protected:
     void paintEvent(QPaintEvent *event);
 
 private:
+    int blankPixelsOnSide;
     int pixelsBetweenStaffLines;
     int numStaffs;
     std::vector<int> staffPositions;

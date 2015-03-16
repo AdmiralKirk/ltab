@@ -7,7 +7,7 @@
 
 RenderArea::RenderArea(QWidget *parent) :
     QWidget(parent), pixelsBetweenStaffLines(10),
-    numStaffs(3), staffPositions(numStaffs)
+    numStaffs(3), staffPositions(numStaffs), blankPixelsOnSide(30)
 {
 }
 
@@ -24,11 +24,19 @@ void RenderArea::paintEvent(QPaintEvent *)
 void RenderArea::drawTabStaff(QPainter &painter, int midPos)
 {
     int topPos = midPos - (pixelsBetweenStaffLines * 3);
+    int rightSide = width() - blankPixelsOnSide;
     for (int i = 0; i < 6; ++i)
     {
         int yPos = topPos + (i * pixelsBetweenStaffLines);
-        painter.drawLine(0, yPos, width(), yPos);
+        painter.drawLine(blankPixelsOnSide, yPos,
+                         rightSide, yPos);
     }
+    painter.drawLine(blankPixelsOnSide, topPos,
+                     blankPixelsOnSide,
+                     topPos + (pixelsBetweenStaffLines * 5));
+    painter.drawLine(rightSide, topPos,
+                     rightSide,
+                     topPos + (pixelsBetweenStaffLines * 5));
 }
 
 void RenderArea::resizeEvent(QResizeEvent *)
