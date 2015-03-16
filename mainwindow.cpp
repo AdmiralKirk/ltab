@@ -1,4 +1,5 @@
 #include <QSize>
+#include <QDebug>
 
 #include "mainwindow.h"
 #include "renderarea.h"
@@ -16,4 +17,9 @@ MainWindow::MainWindow()
 MainWindow::~MainWindow()
 {
     delete renderArea;
+}
+
+void MainWindow::keyPressEvent(QKeyEvent *e)
+{
+    renderArea->keyPressEvent(e);
 }

@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QKeyEvent>
 
 #include "renderarea.h"
 
@@ -12,10 +13,11 @@ class MainWindow : public QMainWindow
 public:
     MainWindow();
     ~MainWindow();
-//    QSize sizeHint() const;
 
 private:
     RenderArea *renderArea;
+
+    void keyPressEvent(QKeyEvent *);
 };
 
 #endif // MAINWINDOW_H
