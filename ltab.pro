@@ -18,3 +18,5 @@ SOURCES += main.cpp\
 
 HEADERS  += mainwindow.h \
     renderarea.h
+
+CONFIG += C++11

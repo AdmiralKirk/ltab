@@ -1,16 +1,25 @@
 #include <QSize>
+#include <QDebug>
 
 #include "mainwindow.h"
+#include "renderarea.h"
 
 MainWindow::MainWindow()
 {
-    renderArea = new RenderArea();
+    renderArea = new RenderArea(this);
 
+    setWindowTitle("ltab");
     setCentralWidget(renderArea);
 
+    resize(QSize(600, 400));
 }
 
-QSize MainWindow::sizeHint() const
+MainWindow::~MainWindow()
 {
-    return QSize(600, 400);
+    delete renderArea;
+}
+
+void MainWindow::keyPressEvent(QKeyEvent *e)
+{
+    renderArea->keyPressEvent(e);
 }
